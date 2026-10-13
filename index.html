@@ -59,7 +59,7 @@ body{
 img,svg{display:block;max-width:100%}
 a{color:inherit}
 .wrap{max-width:60rem;margin:0 auto;padding:0 clamp(2rem, 2rem + 32*(100vw - 20rem)/1120, 4rem)}
-section{padding:clamp(2.5rem, 2.5rem + 2*(100vw - 20rem)/1120, 4rem) 0}
+section{padding:clamp(1.75rem, 1.75rem + 2*(100vw - 20rem)/1120, 3rem) 0}
 h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:normal;text-wrap:balance;font-optical-sizing:auto}
 h1{font-size:clamp(51.5px, 46.858px + 1.1905vw, 64px);line-height:1.1;font-weight:400}
 h2{font-size:clamp(35.125px, 28.857px + 1.6071vw, 52px);line-height:1.2}
@@ -153,7 +153,7 @@ header.hero{
 .btn-note{display:block;margin-top:12px;font-size:13.5px;color:var(--tinta-mut)}
 
 /* ---------- terminal mockup ---------- */
-.term-ctx{margin:40px auto 20px;max-width:640px}.term-ctx h3{font-family:var(--serif);font-weight:500;font-size:clamp(26px,22px + 1vw,34px);line-height:1.2;margin:10px 0 12px}.term-ctx .lead{margin:0 auto}.term-ctx+.terminal{margin-top:0}
+.term-ctx{margin:32px auto 18px;max-width:640px}.term-ctx h3{font-family:var(--serif);font-weight:500;font-size:clamp(26px,22px + 1vw,34px);line-height:1.2;margin:10px 0 12px}.term-ctx .lead{margin:0 auto}.term-ctx+.terminal{margin-top:0}
 .terminal{
   max-width:640px;margin:44px auto 0;text-align:left;
   background:var(--tinta);border:1px solid var(--tinta-2);border-radius:16px;overflow:hidden;
@@ -183,7 +183,8 @@ header.hero{
 @media (max-width:52.125em){.terminal .cuerpo{padding:16px}}
 
 /* ---------- pensando (typing demo) ---------- */
-.pensando-wrap{background:var(--crema2)}
+.pensando-wrap{background:var(--crema2);padding:clamp(2.75rem, 2.75rem + 2*(100vw - 20rem)/1120, 4rem) 0}
+#construir .chips{margin-bottom:0}
 .pensando-card{
   max-width:640px;margin:36px auto 0;background:#fff;border:1px solid var(--borde);
   border-radius:var(--radio);box-shadow:none;overflow:hidden;
@@ -314,7 +315,7 @@ footer p+p{margin-top:8px}
 @media (min-width:768px){.hero-video .clip-bar{height:26px;gap:7px;padding-left:8px}.hero-video .clip-bar i{width:10px;height:10px}.hero-video .clip-win{padding:0 7px 7px;border-radius:16px}}
 /* cc6c-grilla-v2: 6 clips, 2 filas x 3, ventana estilo Claude */
 .clips.clip-solo{grid-template-columns:1fr;max-width:720px;margin-top:36px}
-.clips-wrap{padding-top:clamp(2rem,2rem + 2*(100vw - 20rem)/1120,3rem)}
+.clips-wrap{padding-top:clamp(1.5rem,1.5rem + 2*(100vw - 20rem)/1120,2.5rem)}
 .clips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px;max-width:980px;margin-left:auto;margin-right:auto}
 .clip{margin:0;min-width:0}
 .clip-win{background:var(--crema2);border:1px solid var(--borde);border-radius:10px;padding:0 4px 4px;box-shadow:0 1px 2px rgba(20,20,19,.04),0 6px 18px rgba(20,20,19,.06)}
