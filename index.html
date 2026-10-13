@@ -304,6 +304,11 @@ footer p+p{margin-top:8px}
   .seccion-card{padding:24px}
   .precio-card{padding:24px}
 }
+/* cc7-hero-video: video del hero en ventana estilo Claude */
+.hero-video.clip{max-width:720px;margin:6px auto 26px}
+.hero-video .clip-bar{height:18px;gap:5px;padding-left:5px}.hero-video .clip-bar i{width:7px;height:7px}
+.hero-video video{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:8px;background:#141413}
+@media (min-width:768px){.hero-video .clip-bar{height:26px;gap:7px;padding-left:8px}.hero-video .clip-bar i{width:10px;height:10px}.hero-video .clip-win{padding:0 7px 7px;border-radius:16px}}
 /* cc6c-grilla-v2: 6 clips, 2 filas x 3, ventana estilo Claude */
 .clips-wrap{padding-top:clamp(3rem,3rem + 2*(100vw - 20rem)/1120,5rem)}
 .clips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px;max-width:980px;margin-left:auto;margin-right:auto}
@@ -333,6 +338,15 @@ footer p+p{margin-top:8px}
     <svg class="chispa chispa-hero" aria-hidden="true"><use href="#chispa-oficial"></use></svg>
     <h1>Aprende a programar <span class="acento">con un agente de IA</span> que escribe código contigo</h1>
     <p class="lead center">Curso de Claude Code desde cero hasta flujo agéntico avanzado: subagentes, skills, MCP, GitHub, VS Code y <b>2 proyectos reales</b> construidos de principio a fin. Sin experiencia previa.</p>
+    <!-- cc7-hero-video -->
+    <div class="hero-video clip">
+      <div class="clip-win"><div class="clip-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/clips/00-hero-montaje-poster.webp" width="720" height="450" aria-label="Lo que construyes en el curso: apps reales hechas con Claude Code">
+          <source src="assets/clips/00-hero-montaje.webm" type="video/webm">
+          <source src="assets/clips/00-hero-montaje.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
     <div class="chips">
       <span class="chip">Pago único</span>
       <span class="chip">Acceso inmediato</span>
