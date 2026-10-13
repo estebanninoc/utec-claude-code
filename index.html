@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curso de Claude Code · UTEC — Pago único US$19.99</title>
+<meta name="description" content="Aprende a programar con Claude Code desde cero: agentes, automatizaciones, MCP, GitHub, VS Code y 2 proyectos reales. Pago único US$19.99, acceso de por vida.">
+<meta property="og:title" content="Curso de Claude Code · UTEC">
+<meta property="og:description" content="De cero a avanzado con Claude Code: subagentes, skills, MCP y proyectos reales. Pago único US$19.99.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='14' y='2' width='4' height='12' rx='2' fill='%23D97757'/%3E%3Crect x='14' y='18' width='4' height='12' rx='2' fill='%23D97757'/%3E%3Crect x='2' y='14' width='12' height='4' rx='2' fill='%23D97757'/%3E%3Crect x='18' y='14' width='12' height='4' rx='2' fill='%23D97757'/%3E%3C/svg%3E">
+<style>
+@font-face{font-family:'Inter var';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/inter-var.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Inter var';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/inter-var.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Inter var';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/inter-var.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Inter var';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/inter-var.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Newsreader var';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/newsreader-var.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Newsreader var';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/newsreader-var.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Newsreader var';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/newsreader-var.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+
+:root{
+  --crema:#FAF9F5;
+  --crema2:#F0EEE6;
+  --tinta:#141413;
+  --tinta-mut:#5B5955;
+  --terracota:#D97757;
+  --terracota-dark:#BD5F3F;
+  --durazno:#F3DCC8;
+  --salvia:#DCE8DB;
+  --lavanda:#E4DEF2;
+  --arena:#EFE7D8;
+  --borde:rgba(20,20,19,0.10);
+  --sombra:0 1px 2px rgba(20,20,19,.04), 0 8px 24px rgba(20,20,19,.06);
+  --radio:20px;
+  --serif:'Newsreader var','Newsreader',Georgia,serif;
+  --sans:'Inter var','Inter',-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--crema);
+  color:var(--tinta);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-0.01em;line-height:1.12}
+h1{font-size:clamp(34px,6vw,54px)}
+h2{font-size:clamp(26px,4.4vw,38px)}
+h3{font-size:19px;font-weight:600}
+.eyebrow{
+  font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--terracota-dark);margin-bottom:10px;
+}
+.lead{font-size:18px;color:var(--tinta-mut);max-width:620px}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+
+/* ---------- chispa (icono propio, NO es el logo de Anthropic) ---------- */
+.chispa{position:relative;width:1em;height:1em;display:inline-block}
+.chispa .rayo{position:absolute;background:var(--terracota);border-radius:3px}
+.chispa .r1{left:42%;top:0;width:16%;height:40%}
+.chispa .r2{left:42%;top:60%;width:16%;height:40%}
+.chispa .r3{left:0;top:42%;width:40%;height:16%}
+.chispa .r4{left:60%;top:42%;width:40%;height:16%}
+.chispa .r5{left:16%;top:16%;width:12%;height:28%;transform:rotate(45deg);transform-origin:center}
+.chispa .r6{left:72%;top:56%;width:12%;height:28%;transform:rotate(45deg);transform-origin:center}
+.chispa .r7{left:72%;top:16%;width:12%;height:28%;transform:rotate(-45deg);transform-origin:center}
+.chispa .r8{left:16%;top:56%;width:12%;height:28%;transform:rotate(-45deg);transform-origin:center}
+.chispa-hero{display:block;width:56px;height:56px;margin:0 auto 22px;animation:chispa-girar 7s linear infinite, chispa-latir 2.6s ease-in-out infinite}
+@keyframes chispa-girar{to{transform:rotate(360deg)}}
+@keyframes chispa-latir{0%,100%{opacity:1}50%{opacity:.72}}
+@media (prefers-reduced-motion: reduce){
+  .chispa-hero{animation:none}
+}
+
+/* ---------- header / hero ---------- */
+header.hero{
+  padding:52px 0 60px;
+  text-align:center;
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgba(217,119,87,.10), transparent 70%),
+    var(--crema);
+}
+.pill{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--crema2);border:1px solid var(--borde);
+  border-radius:999px;padding:7px 16px;font-size:13.5px;font-weight:600;
+  color:var(--tinta-mut);margin-bottom:26px;
+}
+.hero h1{max-width:760px;margin:0 auto 18px}
+.hero h1 .acento{color:var(--terracota)}
+.hero .lead{margin-bottom:30px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 0 34px}
+.chip{
+  font-size:13.5px;font-weight:600;color:var(--tinta-mut);
+  background:#fff;border:1px solid var(--borde);border-radius:999px;padding:7px 14px;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;justify-content:center;
+  background:var(--terracota);color:#fff;font-weight:700;font-size:17px;
+  border:none;border-radius:14px;padding:16px 28px;text-decoration:none;
+  box-shadow:0 6px 18px rgba(217,119,87,.32);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(217,119,87,.4)}
+.btn-note{display:block;margin-top:12px;font-size:13.5px;color:var(--tinta-mut)}
+
+/* ---------- terminal mockup ---------- */
+.terminal{
+  max-width:640px;margin:44px auto 0;text-align:left;
+  background:#1E1E1C;border-radius:16px;overflow:hidden;
+  box-shadow:0 20px 50px rgba(20,20,19,.22);
+}
+.terminal .barra{
+  display:flex;gap:7px;align-items:center;padding:12px 16px;background:#141413;
+}
+.terminal .dot{width:10px;height:10px;border-radius:50%}
+.terminal .d1{background:#EF6A5F}.terminal .d2{background:#F4BE4F}.terminal .d3{background:#61C454}
+.terminal .cuerpo{
+  padding:18px 20px 22px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:13.5px;line-height:1.75;color:#E9E7E2;
+}
+.terminal .prompt{color:#9AD1A8}
+.terminal .user-line{color:#fff}
+.terminal .paso{color:#C9C6BE}
+.terminal .ok{color:#8FD67E}
+.terminal .cursor{display:inline-block;width:7px;height:14px;background:#D97757;vertical-align:-2px;animation:cursor-parpadeo 1s step-end infinite}
+@media (prefers-reduced-motion: reduce){.terminal .cursor{animation:none}}
+@keyframes cursor-parpadeo{50%{opacity:0}}
+
+/* ---------- pensando (typing demo) ---------- */
+.pensando-wrap{background:var(--crema2)}
+.pensando-card{
+  max-width:640px;margin:36px auto 0;background:#fff;border:1px solid var(--borde);
+  border-radius:var(--radio);box-shadow:var(--sombra);overflow:hidden;
+}
+.pensando-head{
+  display:flex;align-items:center;gap:10px;padding:16px 20px;border-bottom:1px solid var(--borde);
+  font-weight:600;font-size:14px;color:var(--tinta-mut);
+}
+.pensando-head .chispa{width:18px;height:18px}
+.pensando-body{padding:22px 22px 26px;font-size:15px}
+.pensando-prompt{
+  background:var(--crema2);border-radius:12px;padding:12px 14px;margin-bottom:16px;
+  font-weight:600;min-height:1.6em;
+}
+.pensando-prompt .cursor{display:inline-block;width:2px;height:1em;background:var(--tinta);vertical-align:-2px;margin-left:1px;animation:cursor-parpadeo .9s step-end infinite}
+.pasos{list-style:none;display:flex;flex-direction:column;gap:9px}
+.pasos li{
+  display:flex;gap:10px;align-items:flex-start;color:var(--tinta-mut);font-size:14.5px;
+  opacity:0;transform:translateY(4px);transition:opacity .35s ease, transform .35s ease;
+}
+.pasos li.mostrar{opacity:1;transform:translateY(0)}
+.pasos li .marca{color:var(--terracota);font-weight:700;flex:0 0 auto}
+.pasos li.listo{color:var(--tinta);font-weight:600}
+.pasos li.listo .marca{color:#4F8F5B}
+
+/* ---------- qué incluye ---------- */
+.resumen-num{
+  display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:34px 0 46px;
+}
+.resumen-num .num-card{
+  background:#fff;border:1px solid var(--borde);border-radius:16px;padding:18px 22px;min-width:150px;text-align:center;
+}
+.resumen-num .num{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--terracota-dark)}
+.resumen-num .lbl{font-size:13px;color:var(--tinta-mut);font-weight:600}
+
+.secciones{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.seccion-card{
+  background:#fff;border:1px solid var(--borde);border-radius:18px;padding:22px;
+  opacity:0;transform:translateY(14px);transition:opacity .5s ease, transform .5s ease;
+}
+.seccion-card.in-view{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion: reduce){.seccion-card{opacity:1;transform:none;transition:none}}
+.icono-mini{
+  width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+  margin-bottom:14px;
+}
+.icono-mini svg{width:19px;height:19px}
+.seccion-card .n{font-size:12.5px;font-weight:700;color:var(--tinta-mut);text-transform:uppercase;letter-spacing:.04em}
+.seccion-card h3{margin:5px 0 8px}
+.seccion-card p{font-size:14.5px;color:var(--tinta-mut)}
+.seccion-card .proyecto-tag{
+  display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:var(--terracota-dark);
+  background:var(--durazno);border-radius:999px;padding:4px 10px;
+}
+.bg-durazno{background:var(--durazno)}
+.bg-salvia{background:var(--salvia)}
+.bg-lavanda{background:var(--lavanda)}
+.bg-arena{background:var(--arena)}
+
+/* ---------- precio ---------- */
+.precio-wrap{background:var(--crema2)}
+.precio-card{
+  max-width:460px;margin:0 auto;background:#fff;border:1px solid var(--borde);border-radius:24px;
+  padding:38px 34px 34px;text-align:center;box-shadow:var(--sombra);
+}
+.precio-card .tag{
+  display:inline-block;background:var(--durazno);color:var(--terracota-dark);font-weight:700;
+  font-size:12.5px;border-radius:999px;padding:5px 13px;margin-bottom:18px;
+}
+.precio-monto{font-family:var(--serif);font-size:56px;font-weight:700;line-height:1}
+.precio-monto sup{font-size:22px;font-weight:600;top:-1.4em}
+.precio-sub{color:var(--tinta-mut);font-size:14px;margin:6px 0 26px}
+.precio-card .btn{width:100%;font-size:18px}
+.incluye-lista{list-style:none;text-align:left;margin:26px 0 0;display:flex;flex-direction:column;gap:11px}
+.incluye-lista li{display:flex;gap:10px;font-size:14.5px;color:var(--tinta-mut)}
+.incluye-lista li .marca{color:#4F8F5B;font-weight:700}
+
+/* ---------- bonos ---------- */
+.bonos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.bono-card{
+  background:#fff;border:1px solid var(--borde);border-radius:16px;padding:18px;
+  opacity:0;transform:translateY(12px);transition:opacity .45s ease, transform .45s ease;
+}
+.bono-card.in-view{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion: reduce){.bono-card{opacity:1;transform:none;transition:none}}
+.bono-card .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.bono-card .icono-mini{margin-bottom:0;width:32px;height:32px}
+.bono-card .icono-mini svg{width:16px;height:16px}
+.bono-card .cifra{font-weight:700;font-size:13px;color:var(--terracota-dark)}
+.bono-card h3{font-size:15.5px}
+.bono-card p{font-size:13px;color:var(--tinta-mut);margin-top:4px}
+
+/* ---------- FAQ ---------- */
+.faq{display:flex;flex-direction:column;gap:12px;max-width:680px;margin:30px auto 0}
+.faq details{
+  background:#fff;border:1px solid var(--borde);border-radius:14px;padding:18px 20px;
+}
+.faq summary{
+  font-weight:600;font-size:16px;cursor:pointer;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';font-size:22px;color:var(--terracota);font-weight:400;flex:0 0 auto}
+.faq details[open] summary::after{content:'–'}
+.faq .r{margin-top:12px;color:var(--tinta-mut);font-size:14.5px}
+
+/* ---------- cierre ---------- */
+.cierre{text-align:center;padding-bottom:90px}
+.cierre .btn{margin-top:8px}
+footer{
+  text-align:center;padding:30px 20px 50px;font-size:12.5px;color:var(--tinta-mut);
+}
+
+@media (max-width:640px){
+  section{padding:48px 0}
+  .secciones,.bonos-grid{grid-template-columns:1fr}
+  .precio-card{padding:30px 22px 28px}
+  .wrap{padding:0 18px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="pill">💻 Curso de Claude Code · UTEC</span>
+    <div class="chispa chispa-hero" aria-hidden="true">
+      <span class="rayo r1"></span><span class="rayo r2"></span><span class="rayo r3"></span><span class="rayo r4"></span>
+      <span class="rayo r5"></span><span class="rayo r6"></span><span class="rayo r7"></span><span class="rayo r8"></span>
+    </div>
+    <h1>Aprende a programar <span class="acento">con un agente de IA</span> que escribe código contigo</h1>
+    <p class="lead center">Curso de Claude Code desde cero hasta flujo agéntico avanzado: subagentes, skills, MCP, GitHub, VS Code y <b>2 proyectos reales</b> construidos de principio a fin. Sin experiencia previa.</p>
+    <div class="chips">
+      <span class="chip">Pago único</span>
+      <span class="chip">Acceso inmediato</span>
+      <span class="chip">De por vida</span>
+      <span class="chip">Actualizaciones gratis</span>
+    </div>
+    <a class="btn" href="#precio">Quiero el curso · US$19.99 →</a>
+    <span class="btn-note">Sin experiencia previa: desde cero hasta avanzado</span>
+
+    <div class="terminal" role="img" aria-label="Simulación de una sesión de Claude Code en terminal">
+      <div class="barra"><span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span></div>
+      <div class="cuerpo">
+        <div><span class="prompt">❯</span> <span class="user-line">claude</span></div>
+        <div>&nbsp;</div>
+        <div class="user-line">&gt; agrega autenticación a mi app y conecta la base de datos</div>
+        <div>&nbsp;</div>
+        <div class="paso">⏺ Leyendo estructura del proyecto…</div>
+        <div class="paso">⏺ Creando <b>auth/login.tsx</b></div>
+        <div class="paso">⏺ Conectando MCP → base de datos</div>
+        <div class="ok">✓ Listo. Tests pasando. <span class="cursor"></span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="pensando-wrap" id="pensando">
+  <div class="wrap">
+    <p class="eyebrow center">Así se trabaja en el curso</p>
+    <h2 class="center">Le hablas en español. Claude Code piensa, decide y construye</h2>
+    <p class="lead center">No memorizas sintaxis a ciegas: aprendes a dirigir un agente que planea los pasos, edita los archivos y te explica por qué.</p>
+
+    <div class="pensando-card">
+      <div class="pensando-head"><span class="chispa" aria-hidden="true"><span class="rayo r1"></span><span class="rayo r2"></span><span class="rayo r3"></span><span class="rayo r4"></span><span class="rayo r5"></span><span class="rayo r6"></span><span class="rayo r7"></span><span class="rayo r8"></span></span> Claude Code</div>
+      <div class="pensando-body">
+        <div class="pensando-prompt" id="pensando-prompt" aria-hidden="true"></div>
+        <ul class="pasos" id="pensando-pasos">
+          <li data-final="Entendiendo el pedido y el proyecto actual"><span class="marca">⏺</span><span class="txt"></span></li>
+          <li data-final="Armando el plan: qué archivos tocar y en qué orden"><span class="marca">⏺</span><span class="txt"></span></li>
+          <li data-final="Escribiendo el código paso a paso"><span class="marca">⏺</span><span class="txt"></span></li>
+          <li data-final="Corriendo pruebas para confirmar que funciona" class="listo"><span class="marca">✓</span><span class="txt"></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="incluye">
+  <div class="wrap">
+    <p class="eyebrow center">El curso de Claude Code</p>
+    <h2 class="center">Lo que hay dentro del curso principal</h2>
+    <p class="lead center">4 secciones, de la instalación al flujo agéntico multi-proyecto, con 2 proyectos reales terminados y su código fuente.</p>
+
+    <div class="resumen-num">
+      <div class="num-card"><div class="num">61</div><div class="lbl">clases en video</div></div>
+      <div class="num-card"><div class="num">91</div><div class="lbl">archivos de apoyo</div></div>
+      <div class="num-card"><div class="num">2</div><div class="lbl">proyectos reales con código</div></div>
+    </div>
+
+    <div class="secciones">
+      <div class="seccion-card reveal">
+        <div class="icono-mini bg-durazno"><svg viewBox="0 0 24 24" fill="none" stroke="#BD5F3F" stroke-width="2"><path d="M4 17V7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/></svg></div>
+        <div class="n">Sección 1 · 15 clases</div>
+        <h3>Introducción y primeros pasos</h3>
+        <p>Qué es Claude Code, instalación en distintos entornos, configuración, modelos de IA, manejo de sesiones y memoria, permisos, Git y el cheat sheet de atajos.</p>
+      </div>
+      <div class="seccion-card reveal">
+        <div class="icono-mini bg-salvia"><svg viewBox="0 0 24 24" fill="none" stroke="#3F6B46" stroke-width="2"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg></div>
+        <div class="n">Sección 2 · 28 clases</div>
+        <h3>Funciones avanzadas y flujo agéntico</h3>
+        <p>Subagentes, skills propias, slash commands, hooks, servidores MCP, SQLite en React, feedback con Playwright y Agent Teams (orquestación multi-agente).</p>
+        <span class="proyecto-tag">+ código del proyecto de práctica</span>
+      </div>
+      <div class="seccion-card reveal">
+        <div class="icono-mini bg-lavanda"><svg viewBox="0 0 24 24" fill="none" stroke="#5B4F96" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
+        <div class="n">Sección 3 · 16 clases</div>
+        <h3>Proyecto real: Inventrack (Next.js)</h3>
+        <p>Construyes una app de inventario de punta a punta con Next.js, guiado por Claude Code: planeación, especificaciones, UI, estado y conexión a datos.</p>
+        <span class="proyecto-tag">Código fuente incluido</span>
+      </div>
+      <div class="seccion-card reveal">
+        <div class="icono-mini bg-arena"><svg viewBox="0 0 24 24" fill="none" stroke="#8A6D3B" stroke-width="2"><path d="M12 3C8 6 6 9 6 12a6 6 0 0 0 12 0c0-3-2-6-6-9Z"/></svg></div>
+        <div class="n">Sección 4 · proyecto corto</div>
+        <h3>Proyecto real: Recetas Semanales (.NET Blazor)</h3>
+        <p>Un segundo proyecto completo con otro stack (.NET Blazor), para ver a Claude Code adaptarse a un lenguaje y framework distintos.</p>
+        <span class="proyecto-tag">Código fuente incluido</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="precio-wrap" id="precio">
+  <div class="wrap">
+    <p class="eyebrow center">Precio</p>
+    <h2 class="center">Un pago. Acceso a todo.</h2>
+    <div style="height:30px"></div>
+    <div class="precio-card">
+      <span class="tag">Pago único</span>
+      <div class="precio-monto"><sup>US$</sup>19.99</div>
+      <p class="precio-sub">Sin suscripción, sin cobros recurrentes</p>
+      <a class="btn" href="#STRIPE-PENDIENTE">Quiero mis clases ahora →</a>
+      <ul class="incluye-lista">
+        <li><span class="marca">✓</span> Curso completo de Claude Code (4 secciones, 61 videos)</li>
+        <li><span class="marca">✓</span> 91 archivos de apoyo: prompts, CLAUDE.md, especificaciones</li>
+        <li><span class="marca">✓</span> 2 proyectos reales con código fuente descargable</li>
+        <li><span class="marca">✓</span> Toda la Facultad de Programación de bono (ver abajo)</li>
+        <li><span class="marca">✓</span> Acceso de por vida + actualizaciones gratis</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="bonos">
+  <div class="wrap">
+    <p class="eyebrow center">De regalo, por el mismo precio</p>
+    <h2 class="center">También te llevas toda la Facultad</h2>
+    <p class="lead center">El mismo pago incluye el resto del catálogo de UTEC Programación. Estos son los números reales de cada curso, sin inflar nada.</p>
+
+    <div class="bonos-grid" style="margin-top:34px">
+      <div class="bono-card reveal"><div class="top"><div class="icono-mini bg-durazno"><svg viewBox="0 0 24 24" fill="none" stroke="#BD5F3F" stroke-width="2"><path d="M12 2a5 5 0 0 1 5 5v2H7V7a5 5 0 0 1 5-5Zm-5 9h10v4a5 5 0 0 1-5 5 5 5 0 0 1-5-5Z"/></svg></div><span class="cifra">31 videos</span></div><h3>Python CERO a EXPERTO</h3><p>10 módulos: variables, estructuras de datos, condicionales, funciones, archivos y POO.</p></div>
+
+      <div class="bono-card reveal"><div class="top"><div class="icono-mini bg-salvia"><svg viewBox="0 0 24 24" fill="none" stroke="#3F6B46" stroke-width="2"><path d="M4 4h16v16H4V4Zm4 12 3-3-3-3m5 6h4"/></svg></div><span class="cifra">141 videos</span></div><h3>JavaScript</h3><p>15 módulos de fundamentos a JS moderno (ES6/ES7, clases, async/await) + 2 mini-proyectos.</p></div>
+
+      <div class="bono-card reveal"><div class="top"><div class="icono-mini bg-lavanda"><svg viewBox="0 0 24 24" fill="none" stroke="#5B4F96" stroke-width="2"><path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm9 0v5h5"/></svg></div><span class="cifra">35 guías PDF</span></div><h3>Java (guías maestras)</h3><p>Material de lectura a fondo, de variables a programación orientada a objetos. Sin video.</p></div>
+
+      <div class="bono-card reveal"><div class="top"><div class="icono-mini bg-arena"><svg viewBox="0 0 24 24" fill="none" stroke="#8A6D3B" stroke-width="2"><path d="M4 7 12 3l8 4-8 4-8-4Zm0 5 8 4 8-4m-16 5 8 4 8-4"/></svg></div><span class="cifra">54 videos</span></div><h3>HTML &amp; CSS</h3><p>8 módulos: fundamentos, multimedia, formularios, responsive y accesibilidad, con repo de ejemplo.</p></div>
+
+      <div class="bono-card reveal"><div class="top"><div class="icono-mini bg-durazno"><svg viewBox="0 0 24 24" fill="none" stroke="#BD5F3F" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div><span class="cifra">51 videos</span></div><h3>SQL · Bases de datos</h3><p>8 módulos con un caso práctico real (base de datos de un cine) y sus archivos de ejercicio.</p></div>
+
+      <div class="bono-card reveal"><div class="top"><div class="icono-mini bg-salvia"><svg viewBox="0 0 24 24" fill="none" stroke="#3F6B46" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.2 2.2M17.6 17.6l2.2 2.2M2 12h3M19 12h3M4.2 19.8l2.2-2.2M17.6 6.4l2.2-2.2"/></svg></div><span class="cifra">29 videos</span></div><h3>IA con Python</h3><p>7 unidades: bases de machine learning, algoritmos clásicos, redes neuronales y proyecto final.</p></div>
+
+      <div class="bono-card reveal"><div class="top"><div class="icono-mini bg-lavanda"><svg viewBox="0 0 24 24" fill="none" stroke="#5B4F96" stroke-width="2"><path d="M4 17h4l9-9-4-4-9 9v4Zm9-11 4 4"/></svg></div><span class="cifra">1 video</span></div><h3>Algoritmia y lógica</h3><p>Repaso introductorio de lógica de programación desde cero, con su temario en PDF.</p></div>
+
+      <div class="bono-card reveal"><div class="top"><div class="icono-mini bg-arena"><svg viewBox="0 0 24 24" fill="none" stroke="#8A6D3B" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div><span class="cifra">6 videos</span></div><h3>LinkedIn para empleo</h3><p>Estrategia de red y marca personal para buscar trabajo, con material de apoyo en PDF.</p></div>
+
+      <div class="bono-card reveal"><div class="top"><div class="icono-mini bg-durazno"><svg viewBox="0 0 24 24" fill="none" stroke="#BD5F3F" stroke-width="2"><path d="M4 20 20 4M4 4h6M4 4v6M20 20h-6M20 20v-6"/></svg></div><span class="cifra">53 videos</span></div><h3>Unity · videojuegos</h3><p>9 módulos: planeación, arte, motor de videojuego, programación, sonido y exportación, con assets.</p></div>
+
+      <div class="bono-card reveal"><div class="top"><div class="icono-mini bg-salvia"><svg viewBox="0 0 24 24" fill="none" stroke="#3F6B46" stroke-width="2"><path d="M4 19V5a1 1 0 0 1 1-1h7l2 3h5a1 1 0 0 1 1 1v3M4 19l4-6 3 3 4-5 6 8"/></svg></div><span class="cifra">23 videos</span></div><h3>Introducción a R</h3><p>5 módulos: variables, vectores y scripts para empezar en análisis de datos con R.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <p class="eyebrow center">Preguntas frecuentes</p>
+    <h2 class="center">Lo que más preguntan</h2>
+    <div class="faq">
+      <details>
+        <summary>¿Necesito experiencia previa en programación?</summary>
+        <div class="r">No. El curso de Claude Code arranca desde qué es y cómo instalarlo, y avanza paso a paso hasta flujo agéntico, subagentes y orquestación multi-agente. Si nunca programaste, puedes empezar primero por los cursos de bono (Python, HTML&amp;CSS) y luego entrar al curso principal.</div>
+      </details>
+      <details>
+        <summary>¿Cómo recibo el acceso y por cuánto tiempo dura?</summary>
+        <div class="r">El acceso es inmediato después del pago y es de por vida: no es una suscripción ni hay que pagar de nuevo. Las actualizaciones que se agreguen al curso quedan incluidas sin costo extra.</div>
+      </details>
+      <details>
+        <summary>¿Qué incluye exactamente el pago de US$19.99?</summary>
+        <div class="r">El curso completo de Claude Code (4 secciones, 61 videos, 91 archivos de apoyo y 2 proyectos reales con código fuente) más el resto de la Facultad de Programación como bono: Python, JavaScript, Java, HTML&amp;CSS, SQL, IA con Python, Algoritmia, LinkedIn, Unity e Introducción a R.</div>
+      </details>
+      <details>
+        <summary>¿Qué pasa si tengo un problema con el acceso o el pago?</summary>
+        <div class="r">Escríbenos desde el botón de contacto y te ayudamos a resolverlo lo antes posible.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="wrap">
+    <div class="chispa" style="width:40px;height:40px;margin:0 auto 18px" aria-hidden="true">
+      <span class="rayo r1"></span><span class="rayo r2"></span><span class="rayo r3"></span><span class="rayo r4"></span>
+      <span class="rayo r5"></span><span class="rayo r6"></span><span class="rayo r7"></span><span class="rayo r8"></span>
+    </div>
+    <h2>Empieza a programar con IA hoy</h2>
+    <p class="lead center">Un pago único, acceso de por vida y toda la Facultad de bono.</p>
+    <div class="chips" style="margin-top:22px">
+      <span class="chip">Pago único</span>
+      <span class="chip">Acceso inmediato</span>
+      <span class="chip">De por vida</span>
+      <span class="chip">Actualizaciones gratis</span>
+    </div>
+    <a class="btn" href="#STRIPE-PENDIENTE">Quiero el curso · US$19.99 →</a>
+  </div>
+</section>
+
+<footer>
+  UTEC Facultad de Programación · Curso de Claude Code. "Claude Code" se nombra solo como la herramienta que se enseña a usar; esta landing no está afiliada a Anthropic.
+</footer>
+
+<script>
+(function(){
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Reveal on scroll
+  var reveals = document.querySelectorAll('.reveal, .seccion-card, .bono-card');
+  if (reduced || !('IntersectionObserver' in window)) {
+    reveals.forEach(function(el){ el.classList.add('in-view'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+
+  // "Pensando..." typing demo
+  var promptEl = document.getElementById('pensando-prompt');
+  var pasosEl = document.getElementById('pensando-pasos');
+  if (promptEl && pasosEl) {
+    var texto = '> hazme una página de inicio de sesión y conéctala a mi API';
+    var pasos = pasosEl.querySelectorAll('li');
+
+    function mostrarPasosFinal(){
+      pasos.forEach(function(li){
+        li.querySelector('.txt').textContent = li.getAttribute('data-final');
+        li.classList.add('mostrar');
+      });
+    }
+
+    if (reduced) {
+      promptEl.textContent = texto;
+      mostrarPasosFinal();
+      return;
+    }
+
+    function escribir(el, str, i, cb){
+      if (i <= str.length) {
+        el.textContent = str.slice(0, i);
+        setTimeout(function(){ escribir(el, str, i + 1, cb); }, 28);
+      } else if (cb) { cb(); }
+    }
+
+    function revelarPasos(idx){
+      if (idx >= pasos.length) return;
+      var li = pasos[idx];
+      li.querySelector('.txt').textContent = li.getAttribute('data-final');
+      li.classList.add('mostrar');
+      setTimeout(function(){ revelarPasos(idx + 1); }, 650);
+    }
+
+    var arrancado = false;
+    function arrancar(){
+      if (arrancado) return;
+      arrancado = true;
+      promptEl.innerHTML = '';
+      var span = document.createElement('span');
+      promptEl.appendChild(span);
+      var cursor = document.createElement('span');
+      cursor.className = 'cursor';
+      promptEl.appendChild(cursor);
+      escribir(span, texto, 0, function(){
+        setTimeout(function(){ revelarPasos(0); }, 400);
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      var io2 = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting) { arrancar(); io2.disconnect(); }
+        });
+      }, { threshold: 0.4 });
+      io2.observe(document.getElementById('pensando'));
+    } else {
+      arrancar();
+    }
+  }
+})();
+</script>
+</body>
+</html>
