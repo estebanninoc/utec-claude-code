@@ -300,6 +300,18 @@ footer p+p{margin-top:8px}
   .seccion-card{padding:24px}
   .precio-card{padding:24px}
 }
+/* cc6c-grilla-v2: 6 clips, 2 filas x 3, ventana estilo Claude */
+.clips-wrap{padding-top:clamp(3rem,3rem + 2*(100vw - 20rem)/1120,5rem)}
+.clips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px;max-width:980px;margin-left:auto;margin-right:auto}
+.clip{margin:0;min-width:0}
+.clip-win{background:var(--crema2);border:1px solid var(--borde);border-radius:10px;padding:0 4px 4px;box-shadow:0 1px 2px rgba(20,20,19,.04),0 6px 18px rgba(20,20,19,.06)}
+.clip-bar{display:flex;gap:4px;align-items:center;height:14px;padding-left:3px}
+.clip-bar i{display:block;width:5px;height:5px;border-radius:50%;background:var(--borde-2)}
+.clip-bar i:first-child{background:var(--terracota)}
+.clip video{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:6px;background:#141413}
+.clip figcaption{margin-top:8px;font-size:12px;line-height:1.3;color:var(--tinta)}
+.clip-sec{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--terracota-dark);margin-bottom:1px}
+@media (min-width:768px){.clips{gap:22px}.clip-win{border-radius:14px;padding:0 6px 6px}.clip-bar{height:24px;gap:6px;padding-left:6px}.clip-bar i{width:9px;height:9px}.clip video{border-radius:8px}.clip figcaption{font-size:15px;margin-top:12px}.clip-sec{font-size:12px}}
 </style>
 </head>
 <body>
@@ -381,6 +393,64 @@ footer p+p{margin-top:8px}
     </div>
   </div>
 </header>
+
+<!-- cc6c-grilla-v2 -->
+<section id="por-dentro" class="clips-wrap">
+  <div class="wrap">
+    <p class="eyebrow center">Clases reales</p>
+    <h2 class="center">Así se ve el curso por dentro</h2>
+    <div class="clips">
+      <figure class="clip">
+        <div class="clip-win"><div class="clip-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+        <video muted loop playsinline preload="none" poster="assets/clips/01-sec1-primeruso-poster.webp" width="720" height="450" aria-label="Sección 1: Tu primer uso de Claude Code">
+          <source src="assets/clips/01-sec1-primeruso.webm" type="video/webm">
+          <source src="assets/clips/01-sec1-primeruso.mp4" type="video/mp4">
+        </video></div>
+        <figcaption><span class="clip-sec">Sección 1</span>Tu primer uso de Claude Code</figcaption>
+      </figure>
+      <figure class="clip">
+        <div class="clip-win"><div class="clip-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+        <video muted loop playsinline preload="none" poster="assets/clips/02-sec2-agentteams-poster.webp" width="720" height="450" aria-label="Sección 2: Equipos de agentes">
+          <source src="assets/clips/02-sec2-agentteams.webm" type="video/webm">
+          <source src="assets/clips/02-sec2-agentteams.mp4" type="video/mp4">
+        </video></div>
+        <figcaption><span class="clip-sec">Sección 2</span>Equipos de agentes</figcaption>
+      </figure>
+      <figure class="clip">
+        <div class="clip-win"><div class="clip-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+        <video muted loop playsinline preload="none" poster="assets/clips/03-sec2-peliculas-poster.webp" width="720" height="450" aria-label="Sección 2: App de películas desde cero">
+          <source src="assets/clips/03-sec2-peliculas.webm" type="video/webm">
+          <source src="assets/clips/03-sec2-peliculas.mp4" type="video/mp4">
+        </video></div>
+        <figcaption><span class="clip-sec">Sección 2</span>App de películas desde cero</figcaption>
+      </figure>
+      <figure class="clip">
+        <div class="clip-win"><div class="clip-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+        <video muted loop playsinline preload="none" poster="assets/clips/04-sec3-formulario-poster.webp" width="720" height="450" aria-label="Sección 3: Formulario de productos">
+          <source src="assets/clips/04-sec3-formulario.webm" type="video/webm">
+          <source src="assets/clips/04-sec3-formulario.mp4" type="video/mp4">
+        </video></div>
+        <figcaption><span class="clip-sec">Sección 3</span>Formulario de productos</figcaption>
+      </figure>
+      <figure class="clip">
+        <div class="clip-win"><div class="clip-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+        <video muted loop playsinline preload="none" poster="assets/clips/05-sec3-inventario-poster.webp" width="720" height="450" aria-label="Sección 3: Inventario en vivo">
+          <source src="assets/clips/05-sec3-inventario.webm" type="video/webm">
+          <source src="assets/clips/05-sec3-inventario.mp4" type="video/mp4">
+        </video></div>
+        <figcaption><span class="clip-sec">Sección 3</span>Inventario en vivo</figcaption>
+      </figure>
+      <figure class="clip">
+        <div class="clip-win"><div class="clip-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+        <video muted loop playsinline preload="none" poster="assets/clips/06-sec3-reportes-poster.webp" width="720" height="450" aria-label="Sección 3: Reporte exportado a Excel">
+          <source src="assets/clips/06-sec3-reportes.webm" type="video/webm">
+          <source src="assets/clips/06-sec3-reportes.mp4" type="video/mp4">
+        </video></div>
+        <figcaption><span class="clip-sec">Sección 3</span>Reporte exportado a Excel</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
 <section id="construir">
   <div class="wrap">
@@ -837,6 +907,12 @@ footer p+p{margin-top:8px}
     }
   }
 })();
+</script>
+<script>
+/* cc6c-grilla-v2: play al entrar, pause al salir */
+(function(){var vs=document.querySelectorAll('.clips video');if(!('IntersectionObserver' in window)){return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){})}else{v.pause()}})},{threshold:0.35});
+vs.forEach(function(v){io.observe(v)})})();
 </script>
 </body>
 </html>
